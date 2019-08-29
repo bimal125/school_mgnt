@@ -1,0 +1,19 @@
+Lib
+Scripts
+Include
+.vscode
+tcl
+cloud_sql_proxy
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+.env
+db.sqlite3
+*.pyc 
+media
+htmlcov
+htmlcov/*
+
