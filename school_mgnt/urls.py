@@ -21,6 +21,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework import permissions
 
+
 urlpatterns = [
     url(r'^docs/', include_docs_urls(title='School Management',
                                     authentication_classes=[],
@@ -28,4 +29,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/schools/', include('schools.urls')),
     path('api/v1/students/', include('students.urls')),
+
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

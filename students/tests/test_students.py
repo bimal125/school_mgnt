@@ -24,8 +24,12 @@ class TestStudentViewTestCase(APITestCase):
                               roll   = self.roll,
                               school = self.school
                             )
-    def test_can_create_student(self):
+                            
+    def test_can_list_all_students(self):
+        response = self.client.get(self.url+'list/')
+        self.assertTrue(200 == response.status_code)
 
+    def test_can_create_student(self):
       response = self.client.post(self.url, {
             "fname" : "John",
             "lname" : "Doe",
@@ -36,7 +40,7 @@ class TestStudentViewTestCase(APITestCase):
 
     def test_can_get_student(self):
         url = self.url+str(self.student.id)+'/'
-        response = self.client.get(self.url)
+        response = self.client.get(url)
         self.assertTrue(200 == response.status_code)
 
     def test_can_update_student(self):

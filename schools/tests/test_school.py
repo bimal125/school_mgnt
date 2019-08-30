@@ -16,6 +16,11 @@ class TestSchoolViewTestCase(APITestCase):
                               name       = self.name,
                               max_students     = self.max_students,
                             )
+                            
+    def test_can_list_all_schools(self):
+        response = self.client.get(self.url+'list/')
+        self.assertTrue(200 == response.status_code)
+    
     def test_can_create_school(self):
         response = self.client.post(self.url, {
             "name" : "Amrit Science Campus",
@@ -25,7 +30,7 @@ class TestSchoolViewTestCase(APITestCase):
 
     def test_can_get_school(self):
         url = self.url+str(self.school.id)+'/'
-        response = self.client.get(self.url)
+        response = self.client.get(url)
         self.assertTrue(200 == response.status_code)
 
     def test_can_update_school(self):
