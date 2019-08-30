@@ -1,4 +1,4 @@
-from students.views.student_view import StudentViewSet
+from students.views.students_view import StudentViewSet
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
