@@ -23,7 +23,7 @@ from rest_framework import permissions
 
 
 urlpatterns = [
-    url(r'^docs/', include_docs_urls(title='School Management',
+    url(r'', include_docs_urls(title='School Management',
                                     authentication_classes=[],
                                     permission_classes=[permissions.AllowAny,])),
     path('admin/', admin.site.urls),
