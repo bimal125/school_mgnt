@@ -20,6 +20,8 @@ mixer = "*"
 pytest-ipdb = "*"
 django-filter = "*"
 drf-nested-routers = "*"
+django-secure = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.6"
