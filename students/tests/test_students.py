@@ -11,7 +11,7 @@ class TestStudentViewTestCase(APITestCase):
     def setUp(self):
         self.fname = "Bimal"
         self.lname = "Pandey"
-        self.roll = 12
+        self.roll_no = 12
         self.name = "Radiant Science Campus"
         self.max_students = 200
         self.school = School.objects.create(
@@ -21,19 +21,19 @@ class TestStudentViewTestCase(APITestCase):
         self.student = Student.objects.create(
                               fname  = self.fname,
                               lname  = self.lname,
-                              roll   = self.roll,
+                              roll_no   = self.roll_no,
                               school = self.school
                             )
                             
     def test_can_list_all_students(self):
-        response = self.client.get(self.url+'list/')
+        response = self.client.get(self.url)
         self.assertTrue(200 == response.status_code)
 
     def test_can_create_student(self):
       response = self.client.post(self.url, {
             "fname" : "John",
             "lname" : "Doe",
-            "roll" : 100,
+            "roll_no" : 100,
             "school": self.school.pk
             })
       self.assertEqual(201, response.status_code)
@@ -49,7 +49,7 @@ class TestStudentViewTestCase(APITestCase):
           "fname": "updated fname",
           "lname": "updated lname",
           "school":self.school.pk,
-          "roll": 122
+          "roll_no": 122
           })
         response_data = json.loads(response.content)
         self.assertEqual("updated fname", response_data.get("fname"))
@@ -62,7 +62,7 @@ class TestStudentViewTestCase(APITestCase):
           "fname": "updated fname",
           "lname": "updated lname",
           "school":self.school.pk,
-          "roll": 122
+          "roll_no": 122
           })
         response_data = json.loads(response.content)
         self.assertEqual("updated fname", response_data.get("fname"))

@@ -27,7 +27,7 @@ urlpatterns = [
                                     authentication_classes=[],
                                     permission_classes=[permissions.AllowAny,])),
     path('admin/', admin.site.urls),
-    path('api/v1/schools/', include('schools.urls')),
-    path('api/v1/students/', include('students.urls')),
+    path('api/v1/', include('schools.urls')),
+    path('api/v1/', include('students.urls')),
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

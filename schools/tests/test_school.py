@@ -18,7 +18,7 @@ class TestSchoolViewTestCase(APITestCase):
                             )
                             
     def test_can_list_all_schools(self):
-        response = self.client.get(self.url+'list/')
+        response = self.client.get(self.url)
         self.assertTrue(200 == response.status_code)
     
     def test_can_create_school(self):

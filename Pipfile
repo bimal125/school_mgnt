@@ -19,6 +19,7 @@ pytest-cov = "*"
 mixer = "*"
 pytest-ipdb = "*"
 django-filter = "*"
+drf-nested-routers = "*"
 
 [requires]
 python_version = "3.6"

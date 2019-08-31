@@ -4,33 +4,21 @@ from rest_framework.response import Response
 from students.models import Student
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import OrderingFilter, SearchFilter
-from rest_framework.viewsets import GenericViewSet
-from rest_framework import generics
+from rest_framework import filters
 
-class StudentViewSet(mixins.CreateModelMixin, 
-                   mixins.RetrieveModelMixin, 
-                   mixins.UpdateModelMixin,
-                   mixins.DestroyModelMixin,
-                   GenericViewSet):
+class StudentViewSet(viewsets.ModelViewSet):
     """
     Student viewset
     """
     serializer_class = StudentSerializer
     queryset = Student.objects.all()
-    lookup_field = 'id'
+    lookup_field = "id"
+    filter_backends = (DjangoFilterBackend, OrderingFilter, filters.SearchFilter )
+    filterset_fields = ["nationality","sex","age"]
+    ordering_fields = ["id"]
+    search_fields= ['nationality','fname','lname']
 
 
-    
 
-class ListStudent(generics.ListAPIView):
-    """
-    get students
-    """
-    queryset = Student.objects.all()
-    serializer_class = StudentSerializer
-    filter_backends = (DjangoFilterBackend, OrderingFilter, )
-    filterset_fields = ("fname","lname","roll")
-    ordering_fields = ("id","roll",)
-    ordering = ("roll")
-    search_fields= ("fname","lname","roll")
+
 
