@@ -30,7 +30,7 @@ SECRET_KEY = 'u0__ocqyf%6*^(ysnr6_owhpu@+4vq$v**)u^d5du0rfq3v2rx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['api.beeinfosys.com']
+ALLOWED_HOSTS = ['api.beeinfosys.com','localhost']
 
 # Application definition
 
@@ -77,6 +77,7 @@ REST_FRAMEWORK = {
 
 CORS_ORIGIN_WHITELIST = [
     "https://api.beeinfosys.com",
+    "http://localhost:8000",
 ]
 
 CORS_ALLOW_METHODS = [

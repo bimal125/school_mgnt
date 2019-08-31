@@ -21,7 +21,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework import permissions
 
-
 urlpatterns = [
     url(r'', include_docs_urls(title='School Management',
                                     authentication_classes=[],
