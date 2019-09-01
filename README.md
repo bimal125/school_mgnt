@@ -40,6 +40,12 @@ Run db migration
 ```
 python manage.py migrate
 ```
+
+Collect static files for swagger UI 
+````
+python manage.py collectstatic
+````
+
 Run djano server
 
 ```
