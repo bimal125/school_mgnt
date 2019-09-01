@@ -4,7 +4,7 @@ This backend system allows list, create, retrive, insert, update, partial update
 
 ## Getting Started
 
-Clone this repo. Install all packages in requirements.txt using,
+Clone this repo.,
 
 Goto project root directory
 
