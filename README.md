@@ -9,9 +9,7 @@ Clone this repo,
 git clone https://github.com/bimal125/school_mgnt/
 
 ```
-Install dependencies
 Goto project root directory
-
 Activate virtual environment
 
 ```
