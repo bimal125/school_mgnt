@@ -4,8 +4,12 @@ This backend system allows list, create, retrive, insert, update, partial update
 
 ## Getting Started
 
-Clone this repo.,
+Clone this repo,
+```
+git clone https://github.com/bimal125/school_mgnt/
 
+```
+Install dependencies
 Goto project root directory
 
 Activate virtual environment
