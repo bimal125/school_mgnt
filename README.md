@@ -35,7 +35,7 @@ cp school_mgnt/.env.example school_mgnt/.env
 Edit .env with your favorite editor
 
 ```
-vi .school_mgnt/env
+vi school_mgnt/.env
 ```
 Run db migration
 
